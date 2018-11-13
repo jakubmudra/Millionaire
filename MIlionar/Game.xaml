@@ -1,0 +1,193 @@
+﻿<Page x:Class="MIlionar.Game"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MIlionar"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1200"
+      Title="Game">
+    <Page.Resources>
+        <BitmapImage x:Key="nhints" UriSource="graphics/Lifelines.png"/>
+        <BitmapImage x:Key="nbtns" UriSource="graphics/AllBTNS.png"/>
+
+
+    </Page.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="graphics/bg.png" Stretch="Fill"></ImageBrush>
+        </Grid.Background>
+
+        <Button Click="answer_Click" Height="50" x:Name="answerA" FontFamily="Verdana"  VerticalAlignment="Center" Focusable="False" Grid.Column="0" Grid.Row="3" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle1}">
+            <Button.Background>
+                <ImageBrush ImageSource="{StaticResource nbtns}"
+                        ViewboxUnits="Absolute" Viewbox="0 105 308 40"  x:Name="answerAVB"/>
+            </Button.Background>
+            <Button.Content>
+                <TextBlock FontSize="14" Foreground="white" Margin="-100,0,0,0" x:Name="answerAText">A:</TextBlock>
+            </Button.Content>
+        </Button>
+        <Button  Click="answer_Click" Height="50" x:Name="answerB" FontFamily="Verdana"  VerticalAlignment="Center" Focusable="False" Grid.Column="1" Grid.Row="3" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle1}">
+            <Button.Background>
+                <ImageBrush ImageSource="{StaticResource nbtns}" x:Name="answerBVB"
+                        ViewboxUnits="Absolute" Viewbox="303 105 308 40"/>
+            </Button.Background>
+            <Button.Content>
+                <TextBlock FontSize="14" Foreground="white" Margin="-150,0,0,0" x:Name="answerBText">B:</TextBlock>
+            </Button.Content>
+        </Button>
+        <Button  Click="answer_Click" Height="50" x:Name="answerC" FontFamily="Verdana"  VerticalAlignment="Center" Focusable="False" Grid.Column="0" Grid.Row="4" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle1}">
+            <Button.Background>
+                <ImageBrush ImageSource="{StaticResource nbtns}"
+                        ViewboxUnits="Absolute" Viewbox="0 105 308 40"  x:Name="answerCVB"/>
+            </Button.Background>
+            <Button.Content>
+                <TextBlock FontSize="14" Foreground="white" Margin="-100,0,0,0" x:Name="answerCText">C:</TextBlock>
+            </Button.Content>
+        </Button>
+        <Button  Click="answer_Click" Height="50" x:Name="answerD" FontFamily="Verdana"  VerticalAlignment="Center" Focusable="False" Grid.Column="1" Grid.Row="4" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle1}">
+            <Button.Background>
+                <ImageBrush ImageSource="{StaticResource nbtns}"
+                        ViewboxUnits="Absolute" Viewbox="303 105 308 40"  x:Name="answerDVB"/>
+            </Button.Background>
+            <Button.Content>
+                <TextBlock FontSize="14" Foreground="white" Margin="-150,0,0,0" x:Name="answerDText">D:</TextBlock>
+            </Button.Content>
+        </Button>
+        <Image Source="graphics/cech.png"  Grid.Row="1" Grid.ColumnSpan="2" Margin="10,10,50,-60" HorizontalAlignment="Right"/>
+        <Rectangle Margin="0,30,0,0" Grid.Row="2" Grid.ColumnSpan="2">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="{StaticResource nbtns}"
+                    ViewboxUnits="Absolute" Viewbox="0 0 605 66"/>
+            </Rectangle.Fill>
+
+        </Rectangle>
+        <TextBlock x:Name="query" Grid.Row="2" Grid.ColumnSpan="2" Margin="80,60,80,20" Foreground="White" FontSize="20" TextWrapping="Wrap" >
+        </TextBlock>
+        <Image Source="graphics/MoneyTree.png" Grid.Column="2" Stretch="Fill" Grid.RowSpan="5" Grid.ColumnSpan="3"></Image>
+
+        <Button Height="60" Width="100" Grid.Column="2" x:Name="fiftyUnused" Click="fiftyUnused_Click" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle1}">
+            <Button.Background>
+                <ImageBrush ImageSource="{StaticResource nhints}"
+                    ViewboxUnits="Absolute" Viewbox="0 309 340 250"/>
+            </Button.Background>
+        </Button>
+        <Button Height="60" Width="100" Grid.Column="2" x:Name="fiftyActive" Visibility="Hidden" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle1}">
+            <Button.Background>
+                <ImageBrush ImageSource="{StaticResource nhints}"
+                    ViewboxUnits="Absolute" Viewbox="0 640 340 250"/>
+            </Button.Background>
+        </Button>
+        <Button Height="60" Width="100" Grid.Column="2" x:Name="fiftyUsed" Visibility="Hidden" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle1}">
+            <Button.Background>
+                <ImageBrush ImageSource="{StaticResource nhints}"
+                    ViewboxUnits="Absolute" Viewbox="0 -20 340 250"/>
+            </Button.Background>
+        </Button>
+
+
+
+
+        <Button Height="60" Width="100" Grid.Column="3" x:Name="telUnused" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle1}" Click="telUnused_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="{StaticResource nhints}"
+                        ViewboxUnits="Absolute" Viewbox="362 309 340 250"/>
+            </Button.Background>
+        </Button>
+        <Button Height="60" Width="100" Grid.Column="3" x:Name="telActive" Visibility="Hidden" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle1}">
+            <Button.Background>
+                <ImageBrush ImageSource="{StaticResource nhints}"
+                        ViewboxUnits="Absolute" Viewbox="362 640 340 250"/>
+            </Button.Background>
+        </Button>
+        <Button Height="60" Width="100" Grid.Column="3" x:Name="telUsed" Visibility="Hidden" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle1}">
+            <Button.Background>
+                <ImageBrush ImageSource="{StaticResource nhints}"
+                        ViewboxUnits="Absolute" Viewbox="362 -20 340 250"/>
+            </Button.Background>
+        </Button>
+
+
+
+
+
+
+
+
+        <Button Height="60" Width="100"  Grid.Column="4" x:Name="audienceUnused" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle1}" Click="audienceUnused_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="{StaticResource nhints}"
+                        ViewboxUnits="Absolute" Viewbox="728 309 340 250"/>
+            </Button.Background>
+        </Button>
+        <Button Height="60" Width="100"  Grid.Column="4" x:Name="audienceActive" Visibility="Hidden" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle1}">
+            <Button.Background>
+                <ImageBrush ImageSource="{StaticResource nhints}"
+                        ViewboxUnits="Absolute" Viewbox="728 640 340 250"/>
+            </Button.Background>
+        </Button>
+        <Button Height="60" Width="100"  Grid.Column="4" x:Name="audienceUsed" Visibility="Hidden" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle1}">
+            <Button.Background>
+                <ImageBrush ImageSource="{StaticResource nhints}"
+                        ViewboxUnits="Absolute" Viewbox="728 -20 340 250"/>
+            </Button.Background>
+        </Button>
+
+
+
+
+
+        <ListView BorderBrush="{x:Null}"  x:Name="vyhry"   Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3" Grid.RowSpan="4" HorizontalContentAlignment="Right" Background="{x:Null}">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Focusable" Value="false"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <TextBlock Foreground="#FFF6A200" FontSize="20" FontFamily="Arial Black" Text="{Binding Level}"></TextBlock>
+                        <Image Source="graphics/diamond.png" Width="10" Height="10" Margin="10,0"></Image>
+                        <TextBlock Text="{Binding Value}" Foreground="#FFF6A200" FontSize="20" FontFamily="Arial Black"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+
+        </ListView>
+        <Button Height="40" x:Name="GiveUp" FontFamily="Verdana"  VerticalAlignment="Center" Focusable="False" Grid.Column="2" Grid.ColumnSpan="1"  Grid.Row="4" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle1}" Click="GiveUp_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="{StaticResource nbtns}" x:Name="answerBVdB"
+                        ViewboxUnits="Absolute" Viewbox="300 65 308 40"/>
+            </Button.Background>
+            <Button.Content>
+                <TextBlock FontSize="14" Foreground="white" Margin="-10,0,0,0" x:Name="answerBTexdt">Give UP</TextBlock>
+            </Button.Content>
+        </Button>
+        <Button Height="40" FontFamily="Verdana"  VerticalAlignment="Center" Focusable="False" Grid.Column="3" Grid.ColumnSpan="2"  Grid.Row="4" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle1}">
+            <Button.Background>
+                <ImageBrush ImageSource="{StaticResource nbtns}"
+                        ViewboxUnits="Absolute" Viewbox="300 65 308 40"/>
+            </Button.Background>
+            <Button.Content>
+                <TextBlock FontSize="14" Foreground="white" Margin="-10,0,0,0" x:Name="ActualPrize"></TextBlock>
+            </Button.Content>
+        </Button>
+
+
+    </Grid>
+</Page>
